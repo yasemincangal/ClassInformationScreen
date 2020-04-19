@@ -15,16 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.http import HttpResponse
+from django.conf import settings
 
-from classroom.views import index
+#from classroom.views import index
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',index,name ="index"),
-    path('class/',include("classroom.urls")),
-  
-  
-   
+  path('admin/', admin.site.urls),
+  path('',include('classroom.urls')),
+ 
+    #path('',index,name ="index"),
+    #path('class/',include("classroom.urls")), 
 
 ]
+
+
